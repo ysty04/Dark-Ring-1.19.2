@@ -20,5 +20,19 @@
   "subtitles.mowziesmobs.foliaath.die": "Biteleaf dies",
   "subtitles.mowziesmobs.foliaath.hurt": "Biteleaf grunts",
   "subtitles.mowziesmobs.foliaath.rustle": "Biteleaf rustles",
-  "subtitles.mowziesmobs.foliaath.baby_eat": "Baby Biteleaf eats"
+  "subtitles.mowziesmobs.foliaath.baby_eat": "Baby Biteleaf eats",
+
+  "_comment": "Glowfloat entity",
+  "entity.mowziesmobs.lantern": "Glowfloat",
+  "item.mowziesmobs.lantern_spawn_egg": "Glowfloat Spawn Egg",
+  "config.mowziesmobs.lantern": "Glowfloat",
+  "config.mowziesmobs.lantern.tooltip": "",
+  "subtitles.mowziesmobs.lantern.pop": "Glowfloat pops",
+  "subtitles.mowziesmobs.lantern.puff": "Glowfloat puffs",
+  "item.mowziesmobs.glowing_jelly": "Luminous Jelly",
+  "item.mowziesmobs.glowing_jelly.text.0": "In the darkest corners of the world,\nthe Glowfloats drift silently through the air,\ntheir luminous bodies casting an eerie glow.",
+  "item.mowziesmobs.glowing_jelly.text.1": "\nNative to this realm, these creatures\nare a beacon of hope for those who traverse the night.",
+  "item.mowziesmobs.glowing_jelly.text.2": "Many adventurers have sought out the Glowfloats,\ndrawn to their otherworldly light in hopes of harnessing its power.",
+  "item.mowziesmobs.glowing_jelly.text.3": "\nWhen a Glowfloat is defeated,\nit releases a precious substance known as Luminous Jelly.",
+  "item.mowziesmobs.glowing_jelly.text.4": "When consumed, the Luminous Jelly bestows\na temporary ability to see in the darkest of environments,\nmaking it an invaluable asset for explorers delving into shadowy caves\nor navigating moonless nights."
 }

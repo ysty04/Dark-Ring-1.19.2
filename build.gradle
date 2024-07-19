@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url = "https://repo.spongepowered.org/repository/maven-public/"
+        }
+        maven {
+            url = "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+    }
+}
 plugins {
     id 'eclipse'
     id 'idea'
@@ -5,7 +19,9 @@ plugins {
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
 }
 
-version = '0.0.2-1.19.2'
+apply plugin: 'org.spongepowered.mixin'
+
+version = '0.0.3-1.19.2'
 group = 'hu.ysty04.darkring'
 
 base {
@@ -118,16 +134,42 @@ repositories {
     mavenCentral()
     maven { url "https://www.cursemaven.com" }
     maven { url 'https://files.minecraftforge.net/maven' }
+    maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
+    maven {
+        name = 'SpongePowered'
+        url = 'https://repo.spongepowered.org/repository/maven-public/'
+    }
+    maven {
+        name = 'gradle-plugins'
+        url = 'https://plugins.gradle.org/m2/'
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:1.19.2-43.4.0"
     implementation fg.deobf("curse.maven:mowzies-mobs-250498:5180680")
+    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19:3.1.40')
+    implementation 'org.spongepowered:mixin:0.8.5'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    annotationProcessor 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.guava:guava:31.1-jre'
+    annotationProcessor 'com.google.guava:guava:31.1-jre'
+    implementation 'org.ow2.asm:asm:9.4'
+    implementation 'org.ow2.asm:asm-tree:9.4'
+    implementation 'org.ow2.asm:asm-commons:9.4'
+    annotationProcessor 'org.ow2.asm:asm:9.4'
+    annotationProcessor 'org.ow2.asm:asm-tree:9.4'
+    annotationProcessor 'org.ow2.asm:asm-commons:9.4'
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
-
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'mixins.darkring.refmap.json'
+    config 'mixins.darkring.json'
+}
 // This block of code expands all declared replace properties in the specified resource targets.
 // A missing property will result in an error. Properties are expanded using ${} Groovy notation.
 // When "copyIdeResources" is enabled, this will also run before the game launches in IDE environments.

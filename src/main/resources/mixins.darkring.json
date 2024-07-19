@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "hu.ysty04.darkring.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "ItemGlowingJellyMixin"
+  ],
+  "client": [],
+  "server": []
+}
